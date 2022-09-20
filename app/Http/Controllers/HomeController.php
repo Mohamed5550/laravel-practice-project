@@ -9,6 +9,10 @@ use Illuminate\Support\Facades\Mail;
 class HomeController extends Controller
 {
     public function index() {
-        return view("welcome");
+        // \App\Jobs\SendReports::dispatch();
+
+        event(new \App\Events\BecameHappy("Mohamed", "he married"));
+
+        return view('page');
     }
 }
